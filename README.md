@@ -60,6 +60,8 @@ mavenPublishing {
   }
 }
 ```
+# step 5
+./gradlew pushToMavenCentral
 
 # License
 [GPL3](LICENSE) 
