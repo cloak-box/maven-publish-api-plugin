@@ -21,6 +21,7 @@ plugins {
 }
 ```
 ### step 3
+# for gradle.kts
 ```
 mavenPublishing {
   mavenConfig {
@@ -60,6 +61,45 @@ mavenPublishing {
   }
 }
 ```
-
+# # for gradle 
+```
+mavenPublishing {
+    mavenConfig { config->
+        config.getGroupId().set("group")
+        config.getArtifactId().set("artifactId")
+        config.getVersion().set("version")
+        config.getPublishJavadocJar().set(false)
+        config.getPoublicSourcesJar().set(false)
+        config.getMavenRepo().set("release")
+        config.getMavenCentralUsername().set("mavenCentralUsername")
+        config.getMavenCentralPassword().set("mavenCentralPassword")
+        pom {pomConfig->
+            pomConfig.getName().set("cloak box")
+            pomConfig.getDescription().set("A description of what my library does.")
+            pomConfig.getInceptionYear().set("2020")
+            pomConfig.getUrl().set("https://github.com/cloak-box/Vbox")
+            pomConfig.licenses {
+                license {
+                    name.set("GNU GENERAL PUBLIC LICENSE , Version 3, 29 June 2007")
+                    url.set("https://www.gnu.org/licenses/gpl-3.0.en.html#license-text")
+                    distribution.set("https://www.gnu.org/licenses/gpl-3.0.en.html#license-text")
+                }
+            }
+            pomConfig.developers {
+                developer {
+                    id.set("cloak box")
+                    name.set("cloak box")
+                    url.set("https://github.com/cloak-box")
+                }
+            }
+            pomConfig.scm {
+                url.set("https://github.com/cloak-box/Vbox")
+                connection.set("scm:git:git://github.com/cloak-box/Vbox.git")
+                developerConnection.set("scm:git:ssh://git@github.com/cloak-box/Vbox.git")
+            }
+        }
+    }
+}
+```
 # License
 [GPL3](LICENSE) 
