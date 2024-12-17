@@ -61,7 +61,7 @@ mavenPublishing {
   }
 }
 ```
-# # for gradle 
+# for gradle 
 ```
 mavenPublishing {
     mavenConfig { config->
