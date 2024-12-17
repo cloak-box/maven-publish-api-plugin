@@ -101,5 +101,8 @@ mavenPublishing {
     }
 }
 ```
+# step 4
+./gradlew pushToMavenCentral
+
 # License
 [GPL3](LICENSE) 
